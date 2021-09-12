@@ -1,6 +1,36 @@
 .calculator {
     button {
         outline: none;
-        border: 2px solid red;
+        font-size: 32px;
+        background-color: black;
+        color: white;
+        // border-radius: 50%;
+    }
+    button:hover {
+        opacity: 0.8;
+    }
+    &__display {
+        grid-column: 1 / 5;
+    }
+    &__AC {
+        grid-column: 1 / 3;
+    }
+    &__number0 {
+        grid-column: 1 / 3;
+    }
+    &__display{
+        background-color: pink;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-around;
+        &__1 {
+            color: white;
+            font-size: 25px;
+        }
+        &__2 {
+            color: white;
+            font-size: 32px;
+        }
     }
 }

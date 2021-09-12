@@ -1,5 +1,35 @@
 .calculator button {
-  border: 2px solid red;
+  outline: none;
+  font-size: 32px;
+  background-color: black;
+  color: white;
+}
+.calculator button:hover {
+  opacity: 0.8;
+}
+.calculator__display {
+  grid-column: 1/5;
+}
+.calculator__AC {
+  grid-column: 1/3;
+}
+.calculator__number0 {
+  grid-column: 1/3;
+}
+.calculator__display {
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.calculator__display__1 {
+  color: white;
+  font-size: 25px;
+}
+.calculator__display__2 {
+  color: white;
+  font-size: 32px;
 }
 
 .calculator {
@@ -7,7 +37,7 @@
   margin: auto;
   display: grid;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   min-height: 100vh;
   grid-template-columns: 70px 70px 70px 70px;
   grid-template-rows: minmax(90px, auto) 70px 70px 70px 70px 70px;
