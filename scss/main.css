@@ -1,3 +1,18 @@
+.calculator button {
+  border: 2px solid red;
+}
+
+.calculator {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  grid-template-columns: 70px 70px 70px 70px;
+  grid-template-rows: minmax(90px, auto) 70px 70px 70px 70px 70px;
+}
+
 * {
   padding: 0px;
   margin: 0px;
