@@ -1,9 +1,9 @@
 body {
-  background-color: white;
+  background-color: #1C1C1C;
 }
 
 .calculator__display {
-  color: black;
+  color: white;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
