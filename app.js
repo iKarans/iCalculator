@@ -48,12 +48,16 @@ numberBtns.forEach((btn) => {
 
 operatorBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-        if (display === "") {return};
-        if(currentOperator == "") {
-            currentOperator = btn.innerText;
+        if( display == "") {
+            currentOperator = btn.innerHTML
+            return
         } else {
-            prevOperator = currentOperator
-            currentOperator = btn.innerText;
+            if(currentOperator == "") {
+                currentOperator = btn.innerText;
+            } else {
+                prevOperator = currentOperator
+                currentOperator = btn.innerText;
+            }
         }
         if (store == "") {
             store = display;
@@ -70,7 +74,11 @@ operatorBtns.forEach((btn) => {
 equalsBtn.addEventListener("click", () => {
     if (display === "") {return};
     if (store === "") {return};
+    console.log(currentOperator)
+    console.log(store)
+    console.log(display)
     display= performOperation(currentOperator, store, display);
+    console.log(display);
     store = display;
     updateScreen(display);
     display = ""
@@ -78,30 +86,20 @@ equalsBtn.addEventListener("click", () => {
     prevOperator = "";
 });
 
+deleteBtn.addEventListener("click", () => {
+    if (display === "") {
+        return;
+    } else {
+        display = display.substring(1);
+        updateScreen(display);
+    }
+});
 
 
-
-// operatorBtns.forEach((btn) => {
-//     btn.addEventListener("click", () => {
-//         // if(currentOperand == btn.innerText) {
-//         //     return;
-//         // }
-//         if (currentOperand) {
-//             currentOperand = btn.innerText;
-//             return;
-//         }
-
-//         currentOperand = btn.innerText;
-
-//         if(store == "") {
-//             store = display;
-//             display = ""
-//         } else {
-//             display = performOperation(currentOperand, store, display);
-//             currentOperand = ""
-//             store = display;
-//             displayText.innerText = display;
-//             display = ""
-//         }
-//     })
-// });
+clearBtn.addEventListener("click", () => {
+    store = "";
+    display = "";
+    prevOperator = "";
+    currentOperator = "";
+    updateScreen(display);
+});
