@@ -1,5 +1,18 @@
 body {
-    background-color: black;
+    background-color: #1C1C1C;
+}
+
+.light {
+    background-color: white !important;
+}
+
+.clicked {
+    background-color: #ff7b00 !important;
+}
+
+
+.dark-text {
+    color: #1C1C1C !important;
 }
 
 .calculator {
@@ -11,7 +24,6 @@ body {
         flex-wrap: wrap;
         padding: 10px;
         font-size: 50px;
-        word-wrap: break-word;
         word-break: break-all;
         grid-column: 1 / 5;
     }

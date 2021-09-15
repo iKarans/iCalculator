@@ -7,6 +7,7 @@ const displayText = document.querySelector(".calculator__display");
 const lightBtn = document.querySelector(".calculator__light");
 const body = document.querySelector("body");
 const calculatorDisplay = document.querySelector(".calculator__display");
+const lightBulb = document.querySelector(".calculator__light__i");
 
 let store = "";
 let display = "";
@@ -15,7 +16,7 @@ let currentOperator = "";
 
 appendToDisplay = (str) => {
     display += str;
-}
+};
 
 updateScreen = (str) => {
     if (str == "") {
@@ -25,7 +26,12 @@ updateScreen = (str) => {
         splitStr[0] = parseFloat(splitStr[0]).toLocaleString('en');
         displayText.innerText = splitStr.join(".");
     }
-}
+    // Easter Egg
+    if (displayText.innerText == "8,008,135") {
+        displayText.innerText = "8008135";
+        alert("noice 😏");
+    }
+};
 
 
 performOperation = (operator, str1, str2) => {
@@ -43,7 +49,19 @@ performOperation = (operator, str1, str2) => {
         default:
             return
     }
+};
+
+styleOperator = () => {
+    operatorBtns.forEach((btn) => {
+        if (btn.innerText == currentOperator) {
+            console.log("clicked");
+            btn.classList.add("clicked");
+        } else {
+            btn.classList.remove("clicked");
+        };
+    });
 }
+
 
 numberBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -58,25 +76,27 @@ numberBtns.forEach((btn) => {
 operatorBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
         if( display == "") {
-            currentOperator = btn.innerHTML
-            return
+            currentOperator = btn.innerText;
+            styleOperator();
+            return;
         } else {
             if(currentOperator == "") {
                 currentOperator = btn.innerText;
             } else {
                 prevOperator = currentOperator
                 currentOperator = btn.innerText;
-            }
-        }
+            };
+            styleOperator();
+        };
         if (store == "") {
             store = display;
-            display = ""
+            display = "";
         } else {
             display= performOperation(prevOperator, store, display);
             store = display;
             updateScreen(display);
-            display = ""
-        }
+            display = "";
+        };
     });
 });
 
@@ -93,6 +113,7 @@ equalsBtn.addEventListener("click", () => {
     display = ""
     currentOperator = "";
     prevOperator = "";
+    styleOperator();
 });
 
 deleteBtn.addEventListener("click", () => {
@@ -111,17 +132,21 @@ clearBtn.addEventListener("click", () => {
     prevOperator = "";
     currentOperator = "";
     updateScreen(display);
+    styleOperator();
 });
 
 lightBtn.addEventListener("click", () => {
-    console.log("hi");
-    console.log(body.style.backgroundColor);
-    if(body.style.backgroundColor == "black"){
-        body.style.backgroundColor = "white";
-        calculatorDisplay.style.color = "black";
-    }
-    else {
-        body.style.backgroundColor = "black";
-        calculatorDisplay.style.color = "white";
-    }
+    // console.log("hi");
+    // console.log(body.style.backgroundColor);
+    // if(body.style.backgroundColor == "black"){
+    //     body.style.backgroundColor = "white";
+    //     calculatorDisplay.style.color = "black";
+    // }
+    // else {
+    //     body.style.backgroundColor = "black";
+    //     calculatorDisplay.style.color = "white";
+    // }
+    body.classList.toggle("light");
+    calculatorDisplay.classList.toggle("dark-text");
+    lightBulb.classList.toggle("dark-text");
 });
