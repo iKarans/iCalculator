@@ -21,7 +21,7 @@ body {
   justify-content: flex-start;
   flex-wrap: wrap;
   padding: 10px;
-  font-size: 50px;
+  font-size: 75px;
   word-break: break-all;
   grid-column: 1/5;
 }
@@ -69,7 +69,7 @@ body {
   align-content: center;
   min-height: 100vh;
   grid-template-columns: repeat(4, 70px);
-  grid-template-rows: minmax(70px, auto) repeat(5, 70px);
+  grid-template-rows: 200px repeat(5, 70px);
   grid-gap: 5px;
 }
 

@@ -15,7 +15,11 @@ let prevOperator = "";
 let currentOperator = "";
 
 appendToDisplay = (str) => {
-    display += str;
+    if(display.length > 11) {
+        return;
+    } else {
+        display += str;
+    };
 };
 
 updateScreen = (str) => {
@@ -54,7 +58,6 @@ performOperation = (operator, str1, str2) => {
 styleOperator = () => {
     operatorBtns.forEach((btn) => {
         if (btn.innerText == currentOperator) {
-            console.log("clicked");
             btn.classList.add("clicked");
         } else {
             btn.classList.remove("clicked");
@@ -103,11 +106,7 @@ operatorBtns.forEach((btn) => {
 equalsBtn.addEventListener("click", () => {
     if (display === "") {return};
     if (store === "") {return};
-    console.log(currentOperator)
-    console.log(store)
-    console.log(display)
     display= performOperation(currentOperator, store, display);
-    console.log(display);
     store = display;
     updateScreen(display);
     display = ""
@@ -136,8 +135,6 @@ clearBtn.addEventListener("click", () => {
 });
 
 lightBtn.addEventListener("click", () => {
-    // console.log("hi");
-    // console.log(body.style.backgroundColor);
     // if(body.style.backgroundColor == "black"){
     //     body.style.backgroundColor = "white";
     //     calculatorDisplay.style.color = "black";
