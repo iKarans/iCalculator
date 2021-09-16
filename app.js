@@ -1,3 +1,4 @@
+// Query Selectors
 const numberBtns = document.querySelectorAll(".calculator__number");
 const operatorBtns = document.querySelectorAll(".calculator__operator");
 const equalsBtn = document.querySelector(".calculator__equals");
@@ -9,6 +10,8 @@ const body = document.querySelector("body");
 const calculatorDisplay = document.querySelector(".calculator__display");
 const lightBulb = document.querySelector(".calculator__light__i");
 
+
+// Variables
 let store = "";
 let display = "";
 let prevOperator = "";
@@ -16,6 +19,8 @@ let currentOperator = "";
 let eqlBtnTrack1 = "";
 let eqlBtnTrack2 = "";
 
+
+// Functions (need to name them better)
 appendToDisplay = (str) => {
     if(display.length > 11) {
         return;
@@ -32,7 +37,7 @@ updateScreen = (str) => {
         splitStr[0] = parseFloat(splitStr[0]).toLocaleString('en');
         displayText.innerText = splitStr.join(".");
     }
-    // Easter Egg
+    // Easter Egg Noice 😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏
     if (displayText.innerText == "8,008,135") {
         displayText.innerText = "8008135";
         alert("noice 😏");
@@ -67,6 +72,7 @@ styleOperator = () => {
     });
 }
 
+// adding functionality on the buttons
 
 numberBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
