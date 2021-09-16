@@ -6,6 +6,6 @@
     align-content: center;
     min-height: 100vh;
     grid-template-columns: repeat(4, 70px);
-    grid-template-rows: 200px repeat(5, 70px);
+    grid-template-rows: auto repeat(5, 70px);
     grid-gap: 5px;
 }
