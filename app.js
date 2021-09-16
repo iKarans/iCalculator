@@ -13,6 +13,8 @@ let store = "";
 let display = "";
 let prevOperator = "";
 let currentOperator = "";
+let eqlBtnTrack1 = "";
+let eqlBtnTrack2 = "";
 
 appendToDisplay = (str) => {
     if(display.length > 11) {
@@ -104,8 +106,18 @@ operatorBtns.forEach((btn) => {
 });
 
 equalsBtn.addEventListener("click", () => {
-    if (display === "") {return};
     if (store === "") {return};
+    if (display === "") {
+        display = performOperation(eqlBtnTrack1, store, eqlBtnTrack2);
+        store = display;
+        updateScreen(display);
+        display = "";
+        return;
+    };
+    eqlBtnTrack2 = display;
+    eqlBtnTrack1 = currentOperator;
+    console.log(eqlBtnTrack1);
+    console.log(eqlBtnTrack2);
     display= performOperation(currentOperator, store, display);
     store = display;
     updateScreen(display);
