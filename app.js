@@ -131,6 +131,9 @@ equalsBtn.addEventListener("click", () => {
     console.log(eqlBtnTrack2);
     display= performOperation(currentOperator, store, display);
     store = display;
+    if(display.length > 11) {
+        display = display.substring(0, 12);
+    }
     updateScreen(display);
     display = ""
     currentOperator = "";
