@@ -33,9 +33,14 @@ updateScreen = (str) => {
     if (str == "") {
         displayText.innerText = "";
     } else {
-        splitStr = str.split(".");
-        splitStr[0] = parseFloat(splitStr[0]).toLocaleString('en');
-        displayText.innerText = splitStr.join(".");
+        if (str == ".") {
+            displayText.innerText = "0."
+            display = "0."
+        } else {
+            splitStr = str.split(".");
+            splitStr[0] = parseFloat(splitStr[0]).toLocaleString('en');
+            displayText.innerText = splitStr.join(".");
+        }
     }
     // Easter Egg Noice 😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏
     if (displayText.innerText == "8,008,135") {
