@@ -10,7 +10,7 @@ The functionality of the calculator mimics that which is seen on a simple calcul
 * To run EDE, use [cypress](https://docs.cypress.io/guides/getting-started/installing-cypress).
 * The tests can be found  in cypress/integration/calculator.spec.js.
 
-## Improvements / To Dos
+## Improvements / To-Dos
 
 * The way javascript handles float calculations isn't the best so sometimes the output isn't accurate.
 * Add more math operators.
