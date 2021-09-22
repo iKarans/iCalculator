@@ -143,7 +143,13 @@ equalsBtn.addEventListener("click", () => {
 
 deleteBtn.addEventListener("click", () => {
     if (display === "") {
-        return;
+        store = "";
+        display = "";
+        prevOperator = "";
+        currentOperator = "";
+        updateScreen(display);
+        styleOperator();
+        // return;
     } else {
         display = display.substring(0, display.length - 1);
         updateScreen(display);
