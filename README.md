@@ -14,6 +14,5 @@ The functionality of the calculator mimics that which is seen on a simple calcul
 
 * The way javascript handles float calculations isn't the best so sometimes the output isn't accurate.
 * Add more math operators.
-* Need to make del button work after the equal sign has been pressed.
 * Add more tests.
 
