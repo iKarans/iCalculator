@@ -7,7 +7,7 @@ body {
 }
 
 .clicked {
-  background-color: #2667FF !important;
+  background-color: #7D12FF !important;
 }
 
 .dark-text {
@@ -36,10 +36,10 @@ body {
   opacity: 0.8;
 }
 .calculator__operator {
-  background-color: #3F8EFC;
+  background-color: #AB20FD;
 }
 .calculator__equals {
-  background-color: #3F8EFC;
+  background-color: #AB20FD;
 }
 .calculator__AC {
   grid-column: 1/3;
