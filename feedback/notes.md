@@ -37,8 +37,6 @@ _Right click on the file and click Open Preview or `ctrl/cmd + shift + v` to ope
 
 <img src="./Capture.PNG" width="400">
 
-- If someone was interested just how they can get it on their machine.
-
 3. 15 commits - done
 
 4. EVAL? - done
