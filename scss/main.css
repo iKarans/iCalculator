@@ -7,11 +7,12 @@ body {
 }
 
 .clicked {
-  background-color: #7D12FF !important;
+  background-color: #ffce1f !important;
+  color: #1c1c1c !important;
 }
 
 .dark-text {
-  color: #1C1C1C !important;
+  color: #1c1c1c !important;
 }
 
 .calculator__display {
@@ -36,20 +37,20 @@ body {
   opacity: 0.8;
 }
 .calculator__operator {
-  background-color: #AB20FD;
+  background-color: #ab20fd;
 }
 .calculator__equals {
-  background-color: #AB20FD;
+  background-color: #ab20fd;
 }
 .calculator__AC {
   grid-column: 1/3;
   color: #1f2026;
-  background-color: #D4D4D2;
+  background-color: #d4d4d2;
   border-radius: 100px;
 }
 .calculator__DEL {
   color: #1f2026;
-  background-color: #D4D4D2;
+  background-color: #d4d4d2;
 }
 .calculator__number0 {
   grid-row: 6/7;
