@@ -100,6 +100,8 @@ operatorBtns.forEach((btn) => {
         } else {
             if(currentOperator == "") {
                 currentOperator = btn.innerText;
+                // this should fix charlie problem
+                store = "";
             } else {
                 prevOperator = currentOperator
                 currentOperator = btn.innerText;
@@ -109,13 +111,8 @@ operatorBtns.forEach((btn) => {
         if (store == "") {
             store = display;
             display = "";
-        } else {
-            // Think this fixes charlie problem
-            if(prevOperator == "") {
-                display= performOperation(currentOperator, store, display);
-            } else {
-                display= performOperation(prevOperator, store, display);
-            }
+        } else {        
+            display= performOperation(prevOperator, store, display);
             store = display;
             updateScreen(display);
             display = "";
