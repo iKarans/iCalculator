@@ -42,7 +42,7 @@ updateScreen = (str) => {
             displayText.innerText = splitStr.join(".");
         }
     }
-    // Easter Egg Noice 😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏😏
+    //😏
     if (displayText.innerText == "8,008,135") {
         displayText.innerText = "8008135";
         alert("noice 😏");
@@ -81,6 +81,7 @@ styleOperator = () => {
 
 numberBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
+        // no multiple decimals
         if(btn.innerText === "." && display.includes(".")) {
             return;
         }
@@ -91,6 +92,7 @@ numberBtns.forEach((btn) => {
 
 operatorBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
+        // if user changes operators during a calculatiob
         if( display == "") {
             currentOperator = btn.innerText;
             styleOperator();
@@ -108,7 +110,12 @@ operatorBtns.forEach((btn) => {
             store = display;
             display = "";
         } else {
-            display= performOperation(prevOperator, store, display);
+            // Think this fixes charlie problem
+            if(prevOperator == "") {
+                display= performOperation(currentOperator, store, display);
+            } else {
+                display= performOperation(prevOperator, store, display);
+            }
             store = display;
             updateScreen(display);
             display = "";
@@ -117,7 +124,9 @@ operatorBtns.forEach((btn) => {
 });
 
 equalsBtn.addEventListener("click", () => {
+    // spamming equal with nothing in input
     if (store === "") {return};
+    // continuous equal functionality
     if (display === "") {
         display = performOperation(eqlBtnTrack1, store, eqlBtnTrack2);
         store = display;
@@ -127,13 +136,11 @@ equalsBtn.addEventListener("click", () => {
     };
     eqlBtnTrack2 = display;
     eqlBtnTrack1 = currentOperator;
-    console.log(eqlBtnTrack1);
-    console.log(eqlBtnTrack2);
     display= performOperation(currentOperator, store, display);
     store = display;
-    if(display.length > 11) {
-        display = display.substring(0, 12);
-    }
+    // if(display.length > 11) {
+    //     display = display.substring(0, 12);
+    // }
     updateScreen(display);
     display = ""
     currentOperator = "";
@@ -142,6 +149,7 @@ equalsBtn.addEventListener("click", () => {
 });
 
 deleteBtn.addEventListener("click", () => {
+    // acts like acif pressed after equal
     if (display === "") {
         store = "";
         display = "";
@@ -167,14 +175,6 @@ clearBtn.addEventListener("click", () => {
 });
 
 lightBtn.addEventListener("click", () => {
-    // if(body.style.backgroundColor == "black"){
-    //     body.style.backgroundColor = "white";
-    //     calculatorDisplay.style.color = "black";
-    // }
-    // else {
-    //     body.style.backgroundColor = "black";
-    //     calculatorDisplay.style.color = "white";
-    // }
     body.classList.toggle("light");
     calculatorDisplay.classList.toggle("dark-text");
     lightBulb.classList.toggle("dark-text");
