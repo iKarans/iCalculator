@@ -16,4 +16,5 @@ The functionality of the calculator mimics that which is seen on a the iOS calcu
 * Add more math operators.
 * Add more tests.
 * Code needs refactoring.
+* Implement through classes.
 
