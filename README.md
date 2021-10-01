@@ -15,4 +15,6 @@ The functionality of the calculator mimics that which is seen on a the iOS calcu
 * The way javascript handles float calculations isn't the best so sometimes the output isn't accurate.
 * Add more math operators.
 * Add more tests.
+* Code needs refactoring.
+* Implement through classes.
 
