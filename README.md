@@ -1,5 +1,7 @@
 # iCalculator
 
+![js-calculator](https://github.com/alexsp92/calculator/blob/main/icalculator.png)
+
 ## Introduction
 
 A calculator desgined using HTML, SCSS, CSS and Javascript using a mobile-first approached.
