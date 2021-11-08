@@ -1,6 +1,6 @@
 # iCalculator
 
-![Calculator Project Image](https://github.com/iKarans/iCalculator/blob/main/iCalculator.png)
+![Calculator Project](https://github.com/iKarans/iCalculator/blob/main/iCalculator.png)
 
 ## Introduction
 
