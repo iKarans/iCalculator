@@ -1,6 +1,6 @@
 # iCalculator
 
-![js-calculator](https://github.com/iKarans/iCalculator/main/icalculator.png)
+![icalculator](https://github.com/iKarans/iCalculator/main/icalculator.png)
 
 ## Introduction
 
