@@ -1,6 +1,6 @@
 # iCalculator
 
-![icalculator](https://github.com/iKarans/iCalculator/main/icalculator.png)
+![alt text](https://github.com/iKarans/icalculator/blob/main/icalculator.png?raw=true)
 
 ## Introduction
 
